@@ -1,0 +1,54 @@
+{
+  "name": "StudentPlatform",
+  "version": "0.0.0",
+  "description": "Elium's Academy Student Platform",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:EliumAcademy/StudentPlatform.git",
+    "type": "git"
+  },
+  "scripts": {
+    "start": "node ./config"
+  },
+  "author": "Elium Academy Team <pedro@elium.academy>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "browserify-middleware": "^7.1.0",
+    "colors": "^1.1.2",
+    "compression": "^1.6.2",
+    "csserror": "^2.0.2",
+    "express": "^4.14.0",
+    "gaze": "^1.1.2",
+    "glob": "^7.1.1",
+    "inline-source-map-comment": "^1.0.5",
+    "morgan": "^1.7.0",
+    "stack-trace": "0.0.9"
+  },
+  "devDependencies": {
+    "webpack": "^1.14.0",
+    "autoprefixer-loader": "^3.1.0",
+    "axios": "^0.15.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "if-env": "^1.0.0",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.8.0",
+    "react": "^15.3.2",
+    "react-bootstrap": "^0.30.3",
+    "react-dom": "^15.3.2",
+    "react-iframe": "^0.0.4",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.7.0-alpha.3",
+    "react-router-bootstrap": "^0.23.1",
+    "react-router-redux": "^4.0.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.6.1",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.1.0",
+    "sass-loader": "^4.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-dev-middleware": "^1.9.0"
+  }
+}
