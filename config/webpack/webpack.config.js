@@ -3,11 +3,11 @@ var webpack = require('webpack')
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
-    context: path.join(__dirname, '../../app/frontEnd'),
+    context: path.join(__dirname, '../../'),
     entry:  [
     'webpack-hot-middleware/client',
      'webpack-hot-middleware/client',
-       './index.js'
+       './app/frontEnd/index.js'
     ],
     devServer: {
         inline: true,
