@@ -1,0 +1,1 @@
+const hglt = require("highlight.js")

@@ -5,8 +5,7 @@ const hotMiddleware = require("webpack-hot-middleware")
 
 const compiler = webpack(webpackConfig);
 
-
-
+module.exports. compiler = compiler
 module.exports.middleware = middleware(compiler, {
     noInfo: true,
     publicPath: webpackConfig.output.publicPath

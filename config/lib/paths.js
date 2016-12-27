@@ -17,8 +17,8 @@ global.pathTo = {
     app (name) {
         return path.join(__dirname, "..", "..","app", name)
     },
-    nodeRoot (name) {
-        return path.join(__dirname, "..", "..", name)
+    nodeRoot (...name) {
+        return path.join(__dirname, "..", "..", ...name)
     },
     publicDir (type, name = "") {
         name = (name ?  "/"+ name : "")

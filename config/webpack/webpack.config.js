@@ -1,22 +1,20 @@
 var path = require('path');
 var webpack = require('webpack')
 var autoprefixer = require('autoprefixer');
-
+var rootPath = path.normalize(path.join(__dirname, '../../'))
 module.exports = {
-    context: path.join(__dirname, '../../'),
+    context: rootPath,
     entry:  [
-    'webpack-hot-middleware/client',
-     'webpack-hot-middleware/client',
+        'webpack-hot-middleware/client',
        './app/frontEnd/index.js'
     ],
     devServer: {
-        inline: true,
-        port: 3001
+        inline: true
     },
     output: {
-        path: path.join(__dirname, "public"),
+        path: path.join(rootPath, "public"),
         filename: 'bundle.js',
-        publicPath: ''
+        publicPath: "/public"
     },
     plugins:[
         new webpack.optimize.OccurenceOrderPlugin(),
