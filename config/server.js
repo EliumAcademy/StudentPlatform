@@ -36,7 +36,6 @@ serverStatic(app, express)
 app.set('view engine', 'ejs')
 
 
-require("./server/errors")(app)
 // serve main entry with react
 app.get("/", function(req,res){
     res.send(
