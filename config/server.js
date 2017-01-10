@@ -3,10 +3,20 @@ const path           = require('path');
 const http           = require('http');
 const logger         = require('morgan');
 
+// added in package.json under dependencies, 
+// to move to dev-dependencies if needed
+// const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const passport = require('passport');
+const session = require('express-session');
+
 
 const serverTools   = require("./server/tools")
 const serverStatic  = require("./server/static")
 const webpack       = require('./webpack/middleware.js')
+
+require("./db");
+require('./passport')(passport);
 
 // ManageRoutes
 //const passRoutesTo = appRequire('routes.js');
@@ -17,6 +27,14 @@ let app = express()
 // set up webpack dev server and hot reload
 app.use(webpack.middleware)
 app.use(webpack.hotMiddleware)
+
+// for auth need
+app.use(cookieParser());
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
+// 	extended: true
+// }));
 
 app.use(logger('dev'));
 
@@ -35,19 +53,19 @@ serverStatic(app, express)
 
 app.set('view engine', 'ejs')
 
+app.use(session({
+    secret: process.env.sessionSecret ,
+    // name: cookie_name,
+    // store: sessionStore, // connect-mongo session store
+    // proxy: true,
+    resave: true,
+    saveUninitialized: true
+}));
 
-// serve main entry with react
-app.get("/", function(req,res){
-    res.send(
-        `
-        <body>
-            <div id="reactApp"></div>
-            <script type="text/javascript" src="/public/bundle.js"></script>
-        </body>
-            `
-        )
-})
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
+require('../app/backEnd/routes.js')(app, passport);
 
 
 

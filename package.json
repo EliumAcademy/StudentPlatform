@@ -17,12 +17,18 @@
     "chokidar": "^1.6.1",
     "colors": "^1.1.2",
     "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
     "csserror": "^2.0.2",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
+    "express-session": "^1.14.2",
     "gaze": "^1.1.2",
     "glob": "^7.1.1",
     "inline-source-map-comment": "^1.0.5",
+    "mongoose": "^4.7.6",
     "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0",
     "stack-trace": "0.0.9"
   },
   "devDependencies": {
